@@ -7,7 +7,8 @@
     "build": "rimraf ./build && tsc",
     "start": "yarn run build && node build/index.js",
     "generate": "openapi-generator generate -i docs/openapi.yaml -g typescript-rxjs -o generated-sources/openapi --additional-properties=\"ngVersion=6.1.7\"",
-    "test": "jasmine test"
+    "test": "jasmine test",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,9 @@
   "homepage": "https://github.com/DavidIAm/user-server#readme",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^1.0.12-4.3.0",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^6.8.0",
     "nodemon": "^2.0.3",
     "rimraf": "^3.0.2",
     "ts-node": "^8.10.1",
