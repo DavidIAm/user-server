@@ -1,0 +1,35 @@
+{
+  "name": "user-server",
+  "version": "1.0.0",
+  "description": "User Service",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "yarn run build && node build/index.js",
+    "generate": "openapi-generator generate -i docs/openapi.yaml -g typescript-rxjs -o generated-sources/openapi --additional-properties=\"ngVersion=6.1.7\"",
+    "test": "jasmine test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidIAm/user-server.git"
+  },
+  "keywords": [
+    "authorization"
+  ],
+  "author": "David Ihnen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidIAm/user-server/issues"
+  },
+  "homepage": "https://github.com/DavidIAm/user-server#readme",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^1.0.12-4.3.0",
+    "nodemon": "^2.0.3",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/node": "^13.13.5"
+  }
+}
